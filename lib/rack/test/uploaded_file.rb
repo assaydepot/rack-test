@@ -17,6 +17,8 @@ module Rack
       # The content type of the "uploaded" file
       attr_accessor :content_type
 
+      attr_reader :tempfile
+
       def initialize(path, content_type = "text/plain", binary = false)
         raise "#{path} file does not exist" unless ::File.exist?(path)
 
